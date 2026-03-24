@@ -33,7 +33,7 @@ import { Application } from './applications/application.entity';
         host: config.get('DB_HOST', 'localhost'),
         port: config.get<number>('DB_PORT', 5432),
         username: config.get('DB_USERNAME', 'postgres'),
-        password: config.get('DB_PASSWORD', 'postgres'),
+        password: config.get('DB_PASSWORD', '1111'),
         database: config.get('DB_NAME', 'hh_db'),
         entities: [User, Company, Vacancy, Resume, Application],
         synchronize: true,
@@ -48,12 +48,10 @@ import { Application } from './applications/application.entity';
     ApplicationsModule,
   ],
   providers: [
-    // Global JWT guard - barcha endpointlar himoyalangan
     {
       provide: APP_GUARD,
       useClass: JwtAuthGuard,
     },
-    // Global Roles guard
     {
       provide: APP_GUARD,
       useClass: RolesGuard,

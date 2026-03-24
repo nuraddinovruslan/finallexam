@@ -42,7 +42,7 @@ exports.AppModule = AppModule = __decorate([
                     host: config.get('DB_HOST', 'localhost'),
                     port: config.get('DB_PORT', 5432),
                     username: config.get('DB_USERNAME', 'postgres'),
-                    password: config.get('DB_PASSWORD', 'postgres'),
+                    password: config.get('DB_PASSWORD', '1111'),
                     database: config.get('DB_NAME', 'hh_db'),
                     entities: [user_entity_1.User, company_entity_1.Company, vacancy_entity_1.Vacancy, resume_entity_1.Resume, application_entity_1.Application],
                     synchronize: true,

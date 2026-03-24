@@ -28,14 +28,9 @@ async function bootstrap() {
     }),
   );
 
-  // Serializer (password fieldni yashirish uchun)
   app.useGlobalInterceptors(
     new ClassSerializerInterceptor(app.get(Reflector)),
   );
-
-  // =============================================
-  // SWAGGER KONFIGURATSIYASI
-  // =============================================
   const config = new DocumentBuilder()
     .setTitle('🔍 HeadHunter API')
     .setDescription(
@@ -75,11 +70,11 @@ async function bootstrap() {
 
   SwaggerModule.setup('docs', app, document, {
     swaggerOptions: {
-      persistAuthorization: true,        // Sahifa yangilanganda token saqlanadi
-      docExpansion: 'none',              // Boshlang'ichda yopiq
-      filter: true,                      // Qidirish
-      showRequestDuration: true,         // So'rov vaqtini ko'rsatish
-      tryItOutEnabled: true,             // "Try it out" avtomatik yoqilgan
+      persistAuthorization: true,        
+      docExpansion: 'none',             
+      filter: true,                    
+      showRequestDuration: true,         
+      tryItOutEnabled: true,             
       defaultModelsExpandDepth: 1,
     },
     customSiteTitle: 'HeadHunter API Docs',
